@@ -8,6 +8,9 @@ export class CropMelonBlock {
     update(block, dimension) {
         if (block.permutation.getState(this.growthStateId) != this.maxGrowthStage)
             return;
+        if (!block.permutation.getState(this.connectedStateId))
+            return;
+        const connectedSide = block.permutation.getState(this.connectedSideStateId);
         const location = block.location;
         const locations = [
             { location: { x: location.x, y: location.y, z: location.z - 1 }, side: ConnectedSide.North },
@@ -15,15 +18,12 @@ export class CropMelonBlock {
             { location: { x: location.x + 1, y: location.y, z: location.z }, side: ConnectedSide.East },
             { location: { x: location.x - 1, y: location.y, z: location.z }, side: ConnectedSide.West },
         ];
-        for (let i = 0; i < locations.length; i++) {
-            const loc = locations[i].location;
-            const nearBlock = BlockManager.getBlock(dimension, loc);
-            if (!nearBlock || nearBlock.typeId != this.placesBlockId)
-                continue;
-            block.setPermutation(block.permutation.withState(this.connectedStateId, true).withState(this.connectedSideStateId, locations[i].side));
+        const checkLocation = locations.find((f) => f.side == connectedSide);
+        if (!checkLocation)
             return;
-        }
-        block.setPermutation(block.permutation.withState(this.connectedStateId, false));
+        const checkBlock = BlockManager.getBlock(dimension, checkLocation.location);
+        if (!checkBlock || checkBlock.typeId != this.placesBlockId)
+            block.setPermutation(block.permutation.withState(this.connectedStateId, false));
     }
     onTick = (data) => {
         this.update(data.block, data.dimension);

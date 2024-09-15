@@ -8,6 +8,8 @@ import { BlockManager } from "../../Blocks/manager";
 export class CropMelonBlock implements BlockCustomComponent{
     update(block: Block, dimension: Dimension) {
         if (block.permutation.getState(this.growthStateId) != this.maxGrowthStage) return
+        if (!block.permutation.getState(this.connectedStateId)) return
+        const connectedSide = block.permutation.getState(this.connectedSideStateId) as ConnectedSide
         const location = block.location
         const locations: {location: Vector3, side: ConnectedSide}[] = [
             {location: {x: location.x, y: location.y, z: location.z - 1}, side: ConnectedSide.North},
@@ -15,14 +17,10 @@ export class CropMelonBlock implements BlockCustomComponent{
             {location: {x: location.x + 1, y: location.y, z: location.z}, side: ConnectedSide.East},
             {location: {x: location.x - 1, y: location.y, z: location.z}, side: ConnectedSide.West},
         ]
-        for (let i = 0; i < locations.length; i++) {
-            const loc = locations[i].location
-            const nearBlock = BlockManager.getBlock(dimension, loc)
-            if (!nearBlock || nearBlock.typeId != this.placesBlockId) continue
-            block.setPermutation(block.permutation.withState(this.connectedStateId, true).withState(this.connectedSideStateId, locations[i].side))
-            return
-        }
-        block.setPermutation(block.permutation.withState(this.connectedStateId, false))
+        const checkLocation = locations.find((f) => f.side == connectedSide)
+        if (!checkLocation) return
+        const checkBlock = BlockManager.getBlock(dimension, checkLocation.location)
+        if (!checkBlock || checkBlock.typeId != this.placesBlockId) block.setPermutation(block.permutation.withState(this.connectedStateId, false))
     }
     onTick?: ((arg: BlockComponentTickEvent) => void) | undefined = (data) => {
         this.update(data.block, data.dimension)
