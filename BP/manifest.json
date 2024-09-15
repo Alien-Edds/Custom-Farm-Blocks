@@ -1,0 +1,51 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"Alien Edds Gaming"
+		]
+	},
+	"header": {
+		"name": "Custom Farm Blocks",
+		"description": "Constructors for custom farm block components.",
+		"min_engine_version": [
+			1,
+			21,
+			20
+		],
+		"uuid": "67feea60-fa54-4b8c-a4d7-c3c226d3283c",
+		"version": [
+			1,
+			0,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "f77ba31e-7d9e-4e3b-b33e-3ae550f9b5ed",
+			"version": [
+				1,
+				0,
+				0
+			]
+		},
+        {
+            "type": "script",
+            "language": "javascript",
+            "entry": "scripts/main.js",
+            "uuid": "b398f2c6-21c4-4b2e-9845-d728c62a8dc1",
+            "version":[
+                1,
+                0,
+                0
+            ]
+        }
+	],
+    "dependencies": [
+        {
+            "module_name": "@minecraft/server",
+            "version": "1.13.0"
+        }
+    ]
+}

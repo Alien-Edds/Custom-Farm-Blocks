@@ -1,0 +1,255 @@
+{
+    "format_version": "1.21.20",
+    "minecraft:block": {
+        "description": {
+            "identifier": "example:my_custom_wheat_block",
+            "menu_category": {
+                "category": "none",
+                "is_hidden_in_commands": false
+            },
+            "states": {
+                "example:growth": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7
+                ]
+            }
+        },
+        "components": {
+            "minecraft:collision_box": false,
+            "minecraft:custom_components": [
+                "example:my_custom_wheat_block_component"
+            ],
+            "tag:example:disable_silk_touch": {},
+            "minecraft:geometry": "geometry.example.crop.square",
+            "minecraft:light_dampening": 0,
+            "minecraft:placement_filter": {
+                "conditions": [
+                    {
+                        "allowed_faces": [
+                            "up"
+                        ],
+                        "block_filter": [
+                            "farmland"
+                        ]
+                    }
+                ],
+                "minecraft:display_name": "Custom Wheat Block"
+            }
+        },
+        "permutations": [
+            {
+                "condition": "q.block_state('example:growth') < 7",
+                "components": {
+                    "minecraft:loot": "loot_tables/blocks/example_wheat_0.json"
+                }
+            },
+            {
+                "condition": "q.block_state('example:growth') == 0",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "face_dimming": false,
+                            "ambient_occlusion": false,
+                            "render_method": "alpha_test",
+                            "texture": "example:wheat_0"
+                        }
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -8,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            16,
+                            2,
+                            16
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('example:growth') == 1",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "face_dimming": false,
+                            "ambient_occlusion": false,
+                            "render_method": "alpha_test",
+                            "texture": "example:wheat_1"
+                        }
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -8,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            16,
+                            4,
+                            16
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('example:growth') == 2",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "face_dimming": false,
+                            "ambient_occlusion": false,
+                            "render_method": "alpha_test",
+                            "texture": "example:wheat_2"
+                        }
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -8,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            16,
+                            6,
+                            16
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('example:growth') == 3",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "face_dimming": false,
+                            "ambient_occlusion": false,
+                            "render_method": "alpha_test",
+                            "texture": "example:wheat_3"
+                        }
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -8,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            16,
+                            8,
+                            16
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('example:growth') == 4",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "face_dimming": false,
+                            "ambient_occlusion": false,
+                            "render_method": "alpha_test",
+                            "texture": "example:wheat_4"
+                        }
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -8,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            16,
+                            10,
+                            16
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('example:growth') == 5",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "face_dimming": false,
+                            "ambient_occlusion": false,
+                            "render_method": "alpha_test",
+                            "texture": "example:wheat_5"
+                        }
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -8,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            16,
+                            12,
+                            16
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('example:growth') == 6",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "face_dimming": false,
+                            "ambient_occlusion": false,
+                            "render_method": "alpha_test",
+                            "texture": "example:wheat_6"
+                        }
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -8,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            16,
+                            15,
+                            16
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('example:growth') == 7",
+                "components": {
+                    "minecraft:loot": "loot_tables/blocks/example_wheat_7.json",
+                    "minecraft:material_instances": {
+                        "*": {
+                            "face_dimming": false,
+                            "ambient_occlusion": false,
+                            "render_method": "alpha_test",
+                            "texture": "example:wheat_7"
+                        }
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -8,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            16,
+                            16,
+                            16
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,59 @@
+{
+    "texture_name": "atlas.terrain",
+    "resource_pack_name": "Custom Farm Blocks",
+    "num_mip_levels": 4,
+    "padding": 8,
+    "texture_data": {
+        "example:wheat_0": {
+            "textures": "textures/blocks/wheat_stage_0"
+        },
+        "example:wheat_1": {
+            "textures": "textures/blocks/wheat_stage_1"
+        },
+        "example:wheat_2": {
+            "textures": "textures/blocks/wheat_stage_2"
+        },
+        "example:wheat_3": {
+            "textures": "textures/blocks/wheat_stage_3"
+        },
+        "example:wheat_4": {
+            "textures": "textures/blocks/wheat_stage_4"
+        },
+        "example:wheat_5": {
+            "textures": "textures/blocks/wheat_stage_5"
+        },
+        "example:wheat_6": {
+            "textures": "textures/blocks/wheat_stage_6"
+        },
+        "example:wheat_7": {
+            "textures": "textures/blocks/wheat_stage_7"
+        },
+        "example:melon_connected": {
+            "textures": "textures/example/blocks/melon_stem_connected"
+        },
+        "example:melon_disconnected": {
+            "textures": "textures/example/blocks/melon_stem_disconnected"
+        },
+        "example:melon_0": {
+            "textures": "textures/example/blocks/melon_0"
+        },
+        "example:melon_1": {
+            "textures": "textures/example/blocks/melon_1"
+        },
+        "example:melon_2": {
+            "textures": "textures/example/blocks/melon_2"
+        },
+        "example:melon_3": {
+            "textures": "textures/example/blocks/melon_3"
+        },
+        "example:melon_4": {
+            "textures": "textures/example/blocks/melon_4"
+        },
+        "example:melon_5": {
+            "textures": "textures/example/blocks/melon_5"
+        },
+        "example:melon_6": {
+            "textures": "textures/example/blocks/melon_6"
+        }
+    }
+}

@@ -1,0 +1,34 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"Alien Edds Gaming"
+		]
+	},
+	"header": {
+		"name": "Custom Farm Blocks",
+		"description": "Constructors for custom farm block components.",
+		"min_engine_version": [
+			1,
+			21,
+			20
+		],
+		"uuid": "fb342955-4413-4adb-ac78-9a652508294b",
+		"version": [
+			1,
+			0,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "feecaf04-41bc-4df7-9967-5187d5be84bb",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	]
+}

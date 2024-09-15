@@ -1,0 +1,9 @@
+{
+	"format_version": "1.10.0",
+	"example:my_custom_wheat_block": {
+		"sound": "grass"
+	},
+	"example:my_custom_melon_crop": {
+		"sound": "grass"
+	}
+}
